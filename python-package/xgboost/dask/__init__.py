@@ -2144,9 +2144,6 @@ class DaskXGBRanker(DaskScikitLearnBase, XGBRankerMixIn):
         args = {k: v for k, v in locals().items() if k not in ("self", "__class__")}
         return self._client_sync(self._fit_async, **args)
 
-    # FIXME(trivialfis): arguments differ due to additional parameters like group and
-    # qid.
-    fit.__doc__ = XGBRanker.fit.__doc__
 
 
 @xgboost_model_doc(

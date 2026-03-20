@@ -1616,10 +1616,6 @@ class XGBClassifier(XGBClassifierBase, XGBModel):
             self._set_evaluation_result(evals_result)
             return self
 
-    assert XGBModel.fit.__doc__ is not None
-    fit.__doc__ = XGBModel.fit.__doc__.replace(
-        "Fit gradient boosting model", "Fit gradient boosting classifier", 1
-    )
 
     def predict(
         self,
